@@ -1,0 +1,30 @@
+#pragma once
+#include "imgui.h"
+
+// EXAMPLE custom style function
+
+inline void ApplyMyCustomStyle()
+{
+    ImGuiStyle &style = ImGui::GetStyle();
+
+    // Example custom colors
+    // Buttons
+    // 60, 60, 60, 255
+    // 0.235, 0.235, 0.235
+    ImColor button_color(0.10f, 0.10f, 0.10f, 1.0f);
+    ImColor button_hover_color(0.12f, 0.12f, 0.12f, 1.0f);
+    ImColor button_active_color(0.15f, 0.15f, 0.15f, 1.0f);
+    style.Colors[ImGuiCol_Button] = button_color;
+    style.Colors[ImGuiCol_ButtonHovered] = button_hover_color;
+    style.Colors[ImGuiCol_ButtonActive] = button_active_color;
+
+    // Input fields
+    ImColor input_bg_color(0.2f, 0.2f, 0.2f, 1.0f);
+    ImColor input_border_color(0.4f, 0.4f, 0.4f, 1.0f);
+    style.Colors[ImGuiCol_FrameBg] = input_bg_color;
+    style.Colors[ImGuiCol_FrameBgHovered] = ImColor(input_bg_color).Value;
+
+    // Child windows
+    ImColor child_bg_color(0.1f, 0.1f, 0.1f, 1.0f);
+    style.Colors[ImGuiCol_ChildBg] = child_bg_color;
+}
